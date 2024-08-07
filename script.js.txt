@@ -1,0 +1,29 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const teams = [
+        { name: 'Mumbai Indians' },
+        { name: 'Chennai Super Kings' },
+        { name: 'Royal Challengers Bangalore' },
+        { name: 'Kolkata Knight Riders' },
+        // Add more teams as needed
+    ];
+
+    const matches = [
+        { date: '2023-04-01', team1: 'Mumbai Indians', team2: 'Chennai Super Kings', score: '160/8 vs 158/7' },
+        { date: '2023-04-02', team1: 'Royal Challengers Bangalore', team2: 'Kolkata Knight Riders', score: '180/5 vs 175/6' },
+        // Add more matches as needed
+    ];
+
+    const teamListElement = document.getElementById('team-list');
+    teams.forEach(team => {
+        const li = document.createElement('li');
+        li.textContent = team.name;
+        teamListElement.appendChild(li);
+    });
+
+    const matchListElement = document.getElementById('match-list');
+    matches.forEach(match => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${match.date}</td><td>${match.team1}</td><td>${match.team2}</td><td>${match.score}</td>`;
+        matchListElement.appendChild(tr);
+    });
+});
